@@ -14,5 +14,6 @@ dependencies:
   - scipy
   - openbabel
   - parmed
+  - biopython
   - pip:
     - .

@@ -16,6 +16,8 @@ dependencies = [
     "matplotlib",
     "seaborn",
     "parmed",
+    "biopython",
+    "scipy",
 ]
 
 [project.scripts]
