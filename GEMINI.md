@@ -2,6 +2,12 @@
 
 This repository has been refactored from `CompBiology-Biophysics` into a modular Python package named `MSTBxAnalysis`.
 
+## Project Versioning & Maintenance
+
+- **Current Version:** `0.5.0beta`
+- **Versioning Policy:** Increments follow a `.20` cycle (e.g., from `0.5.0beta` to `0.5.20beta` before jumping to `0.6.0beta`).
+- **Tool Ingestion (`addtool/`):** The directory `addtool/` (git-ignored) is used as a staging area for new scripts. Check this folder for legacy code that needs porting to the modular CLI.
+
 ## Current Tools Index
 
 ### Core MDAnalysis

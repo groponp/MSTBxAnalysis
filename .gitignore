@@ -34,6 +34,7 @@ venv/
 ENV/
 
 # Project specific
+addtool/
 *.dat
 *.log
 *.png

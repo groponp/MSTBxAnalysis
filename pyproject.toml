@@ -15,6 +15,7 @@ dependencies = [
     "pandas",
     "matplotlib",
     "seaborn",
+    "parmed",
 ]
 
 [project.scripts]
