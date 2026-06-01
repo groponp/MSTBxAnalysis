@@ -1,26 +1,24 @@
 # MSTBxAnalysis
 
+**Version:** 0.5.0-beta
+
 Modular analysis tools for computational biophysics and biology. This project is a refactored and modernized version of the `CompBiology-Biophysics` script collection, designed for ease of use and extensibility.
 
 ## Features
 - **Modular CLI:** Use a single command `mstbxanalysis` to access all tools.
+- **Robust Loading:** The CLI handles missing dependencies gracefully, loading only available modules.
 - **Easy Installation:** Install via `pip` or set up a dedicated `conda` environment.
 - **Extensible Architecture:** Adding a new analysis script is as simple as dropping a Python file into the `modules/` directory.
 - **Cross-Platform:** Compatible with Linux and macOS.
 
 ## Installation
 
-### Using Conda (Recommended)
-```bash
-conda env create -f environment.yml
-conda activate mstbxanalysis
-```
-
-### Using Pip (Recommended for Development)
+### Using Pip (Recommended)
+From the root of the repository:
 ```bash
 pip install -e .
 ```
-*Note: Using `-e` (editable mode) installs the package as a symbolic link to your source code. This means any changes you make to the files in `src/` will be immediately available in the `mstbxanalysis` command without needing to re-install.*
+*Note: Using `-e` (editable mode) installs the package as a symbolic link to your source code. This means any changes you make to the files in `src/` will be immediately available in the `mstbxanalysis` command without needing to re-install. It also ensures all dependencies are correctly resolved.*
 
 ### Core Libraries and Recommendations
 
