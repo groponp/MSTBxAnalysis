@@ -22,6 +22,10 @@ pip install -e .
 ```
 *Note: Using `-e` (editable mode) installs the package as a symbolic link to your source code. This means any changes you make to the files in `src/` will be immediately available in the `mstbxanalysis` command without needing to re-install.*
 
+### Core Libraries and Recommendations
+
+This project is primarily built using **MDAnalysis** and **VMD's Tcl script interpreter**. We strongly suggest that developers and contributors prioritize these libraries when adding new functionality. Please attempt to implement new analysis tools using these established methods before introducing additional dependencies.
+
 ## Usage
 
 The general syntax is:
@@ -31,11 +35,61 @@ mstbxanalysis [COMMAND] [OPTIONS]
 
 ### Available Commands
 
-- **`rmsd`**: Calculate Root Mean Square Deviation (RMSD) using MDAnalysis.
-- **`fel`**: Calculate Free Energy Landscapes (FEL) from two collective variables.
-- **`dg-to-kd`**: Calculate dissociation constant (Kd) from Gibbs free energy (ΔG).
+#### Core MDAnalysis Tools
+- **`rmsd`**: Calculate Root Mean Square Deviation (RMSD).
+- **`mda-rgyr`**: Calculate Radius of Gyration (Rgyr).
+- **`mda-rmsf`**: Calculate Root Mean Square Fluctuation (RMSF).
+- **`mda-2dmatrix`**: Calculate and plot a 2D RMSD Distance Matrix.
+- **`mda-convert-traj`**: Convert coordinates and trajectories between different formats.
+- **`pbc-fix`**: Remove PBC effects and fit trajectories using MDAnalysis or VMD.
 
-Run `mstbxanalysis --help` to see the full list of commands.
+#### VMD-based Tools
+- **`vmd-sasa`**: Calculate Surface Accessible Solvent Area (SASA).
+- **`vmd-get-box`**: Calculate center and box size for docking (AutoDock/Vina).
+- **`vmd-pbc-wrap`**: PBC wrapping and alignment using VMD/pbctools.
+- **`vmd-rmsd-residue`**: Calculate average RMSD per residue and store in PDB beta column.
+- **`vmd-segid-to-chain`**: Convert VMD segnames to chainIDs.
+- **`vmd-merge-pdb`**: Merge multiple PDB files into a single system.
+- **`vmd-reduce-traj`**: Reduce trajectory size by skipping frames.
+- **`vmd-movie-render`**: Render movies from VMD scenes.
+- **`vmd-molpack`**: Build biomolecular systems (orient, topology, solvate, ionize).
+- **`vmd-molywood`**: Automate Molywood movie generation.
+- **`vmd-make-segname`**: Set segment names for protein regions.
+- **`vmd-jarzynski`**: Setup Jarzynski equality pulling scripts.
+- **`vmd-make-tclforces`**: Mark PDB files for TclForces/TclBC.
+- **`orient-z`**: Orient protein along the Z-axis using VMD.
+- **`remove-rot-trans`**: Remove rotation and translation using VMD.
+
+#### Simulation Prep & Building
+- **`bigbabel`**: Process ligand databases (SDF split -> SMI -> PDB -> PDBQT).
+- **`charmm-gui-prepare`**: Prepare PDB/MOL2 for CHARMM-GUI inputs.
+- **`co-mol-md`**: Calculate ligand counts for concentration-based flooding.
+- **`gmx-atom-index`**: Create or append to GROMACS index files (.ndx).
+- **`make-flooding`**: Generate Packmol inputs for flooding MD.
+- **`namd-to-charmm`**: Convert NAMD formats (PSF/PDB) to CHARMM.
+- **`namd-to-gmx`**: Convert NAMD formats (PSF/PDB) to GROMACS.
+- **`sdf-to-pdb`**: Batch convert SDF libraries to PDB with 3D coordinates.
+
+#### Statistical & Thermodynamic Analysis
+- **`dg-to-kd`**: Calculate dissociation constant (Kd) from ΔG.
+- **`fel`**: Calculate Free Energy Landscapes (FEL).
+- **`namd-stats`**: Extract thermodynamics and kinetics from NAMD logs.
+- **`harm-potential`**: Calculate harmonic spring constants for umbrella sampling.
+
+#### Sequence & Structure Analysis
+- **`contact-map`**: Calculate contact frequencies between atom selections.
+- **`get-seq`**: Retrieve sequences from PDB/NCBI and run BLASTp.
+- **`prody-eda`**: Perform Essential Dynamics Analysis (PCA) using ProDy.
+- **`r-msa`**: Run Multiple Sequence Alignment using R's `msa` package.
+
+#### Workflows & Automation
+- **`analysis-workflow`**: Run a full suite of MD analyses across project directories.
+- **`vina-screening`**: Virtual screening workflow (SMI -> PDBQT -> Vina -> Sort).
+- **`virtscreen`**: Simplified Vina screening loop for existing libraries.
+- **`namd-hpc-segment`**: Manage segmented NAMD simulations on HPC (SLURM).
+- **`easy-htmd`**: Basic setup for high-throughput MD.
+
+Run `mstbxanalysis [COMMAND] --help` for specific options of each tool.
 
 ## How to Add a New Analysis Script
 

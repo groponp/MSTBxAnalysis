@@ -4,9 +4,23 @@ This repository has been refactored from `CompBiology-Biophysics` into a modular
 
 ## Current Tools Index
 
-- `rmsd`: Root Mean Square Deviation analysis.
-- `fel`: Free Energy Landscape calculations.
-- `dg-to-kd`: Dissociation constant calculation from ΔG.
+### Core MDAnalysis
+- `rmsd`, `mda-rgyr`, `mda-rmsf`, `mda-2dmatrix`, `mda-convert-traj`, `pbc-fix`.
+
+### VMD/Tcl
+- `vmd-sasa`, `vmd-get-box`, `vmd-pbc-wrap`, `vmd-rmsd-residue`, `vmd-segid-to-chain`, `vmd-merge-pdb`, `vmd-reduce-traj`, `vmd-movie-render`, `vmd-molpack`, `vmd-molywood`, `vmd-make-segname`, `vmd-jarzynski`, `vmd-make-tclforces`, `orient-z`, `remove-rot-trans`.
+
+### Prep & Building
+- `bigbabel`, `charmm-gui-prepare`, `co-mol-md`, `gmx-atom-index`, `make-flooding`, `namd-to-charmm`, `namd-to-gmx`, `sdf-to-pdb`.
+
+### Stat & Thermo
+- `dg-to-kd`, `fel`, `namd-stats`, `harm-potential`.
+
+### Seq & Struct
+- `contact-map`, `get-seq`, `prody-eda`, `r-msa`.
+
+### Workflows
+- `analysis-workflow`, `vina-screening`, `virtscreen`, `namd-hpc-segment`, `easy-htmd`.
 
 ## Development Rules
 
