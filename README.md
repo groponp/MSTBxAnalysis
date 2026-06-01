@@ -13,12 +13,50 @@ Modular analysis tools for computational biophysics and biology. This project is
 
 ## Installation
 
-### Using Pip (Recommended)
-From the root of the repository:
+### 1. Using Conda (Recommended for isolated environments)
+If you prefer managing dependencies with Conda, use the provided `environment.yml`:
+
 ```bash
+# Create the environment from the file
+conda env create -f environment.yml
+
+# Activate the new environment
+conda activate mstbxanalysis
+
+# Install the package in editable mode to link the source code
 pip install -e .
 ```
-*Note: Using `-e` (editable mode) installs the package as a symbolic link to your source code. This means any changes you make to the files in `src/` will be immediately available in the `mstbxanalysis` command without needing to re-install. It also ensures all dependencies are correctly resolved.*
+
+### 2. Using Pip (Direct installation)
+You can install the package and its dependencies directly using `pip`. It is recommended to do this within a virtual environment:
+
+```bash
+# Create and activate a virtual environment (optional but recommended)
+python -m venv venv
+source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+
+# Install in editable mode
+pip install -e .
+```
+
+### Shell Autocompletion
+`MSTBxAnalysis` uses the `click` library, which supports shell autocompletion for `bash`, `zsh`, and `fish`.
+
+#### For Bash:
+Add the following line to your `~/.bashrc`:
+```bash
+eval "$(_MSTBXANALYSIS_COMPLETE=bash_source mstbxanalysis)"
+```
+
+#### For Zsh:
+Add the following line to your `~/.zshrc`:
+```zsh
+eval "$(_MSTBXANALYSIS_COMPLETE=zsh_source mstbxanalysis)"
+```
+
+After adding the line, restart your shell or source the configuration file (e.g., `source ~/.bashrc`).
+
+## Usage
 
 ### Core Libraries and Recommendations
 
