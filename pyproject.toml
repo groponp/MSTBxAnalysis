@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mstbxanalysis"
+version = "0.1.0"
+description = "Modular analysis tools for computational biophysics and biology"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "click",
+    "MDAnalysis",
+    "numpy",
+    "pandas",
+    "matplotlib",
+    "seaborn",
+]
+
+[project.scripts]
+mstbxanalysis = "mstbxanalysis.main:cli"

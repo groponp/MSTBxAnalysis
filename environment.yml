@@ -1,0 +1,17 @@
+name: mstbxanalysis
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python>=3.8
+  - pip
+  - click
+  - mdanalysis
+  - numpy
+  - pandas
+  - matplotlib
+  - seaborn
+  - scipy
+  - openbabel
+  - pip:
+    - .
