@@ -2,11 +2,11 @@
 
 This repository has been refactored from `CompBiology-Biophysics` into a modular Python package named `MSTBxAnalysis`.
 
-## Core Architecture
+## Current Tools Index
 
-- **CLI Tool:** `mstbxanalysis` (installed via `pip` or `conda`).
-- **Modular System:** All analysis subcommands are located in `src/mstbxanalysis/modules/`.
-- **Dynamic Loading:** The CLI dynamically loads any Python file in the `modules/` directory that contains a `click` command named `command`.
+- `rmsd`: Root Mean Square Deviation analysis.
+- `fel`: Free Energy Landscape calculations.
+- `dg-to-kd`: Dissociation constant calculation from ΔG.
 
 ## Development Rules
 

@@ -16,10 +16,11 @@ conda env create -f environment.yml
 conda activate mstbxanalysis
 ```
 
-### Using Pip
+### Using Pip (Recommended for Development)
 ```bash
-pip install .
+pip install -e .
 ```
+*Note: Using `-e` (editable mode) installs the package as a symbolic link to your source code. This means any changes you make to the files in `src/` will be immediately available in the `mstbxanalysis` command without needing to re-install.*
 
 ## Usage
 
@@ -30,18 +31,9 @@ mstbxanalysis [COMMAND] [OPTIONS]
 
 ### Available Commands
 
-- **`rmsd`**: Calculate Root Mean Square Deviation using MDAnalysis.
-  ```bash
-  mstbxanalysis rmsd --coord protein.pdb --traj trajectory.dcd --sel "protein and name CA" --ofile rmsd.dat
-  ```
-- **`fel`**: Calculate Free Energy Landscapes (FEL).
-  ```bash
-  mstbxanalysis fel --file1 rmsd.dat --file2 rgyr.dat --temperature 310 --ofile fel_plot.png
-  ```
+- **`rmsd`**: Calculate Root Mean Square Deviation (RMSD) using MDAnalysis.
+- **`fel`**: Calculate Free Energy Landscapes (FEL) from two collective variables.
 - **`dg-to-kd`**: Calculate dissociation constant (Kd) from Gibbs free energy (ΔG).
-  ```bash
-  mstbxanalysis dg-to-kd --be -11.5 --conc nM
-  ```
 
 Run `mstbxanalysis --help` to see the full list of commands.
 
