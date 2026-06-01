@@ -176,5 +176,16 @@ mstbxanalysis my-new-tool --input data.pdb --param 2.5
 ## Legacy Code
 All original scripts from the `CompBiology-Biophysics` repository have been moved to the `old.code/` directory for reference.
 
+## Authorship
+- **Ropón-Palacios G.** - *Initial work and Lead Developer* - [groponp](https://github.com/groponp)
+
+## Contributors
+We welcome contributions to `MSTBxAnalysis`! If you would like to contribute:
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Submit a pull request with a detailed description of your changes.
+
+Special thanks to all future contributors who help expand this modular biophysics toolkit.
+
 ## License
 GPLv3
